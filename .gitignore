@@ -1,0 +1,52 @@
+# ─── Secrets (never commit) ──────────────────────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ─── Java / Maven ────────────────────────────────────────
+backend/target/
+backend/.mvn/
+*.class
+*.jar
+*.war
+hs_err_pid*
+
+# ─── Node / Angular ──────────────────────────────────────
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+frontend/.nx/
+npm-debug.log*
+yarn-error.log
+
+# ─── Verify harness artifacts (regenerable) ──────────────
+frontend/verify-output/*.png
+frontend/verify-output/*.json
+
+# ─── Editors / OS ────────────────────────────────────────
+.idea/
+*.iml
+.vscode/*
+!.vscode/extensions.json
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ─── Logs ────────────────────────────────────────────────
+*.log
+logs/
+
+# ─── Docker / runtime ────────────────────────────────────
+docker-compose.override.yml
+.docker-data/
+
+# ─── Sub-projects (separate repos) ───────────────────────
+central-ui-fullstack-starter/
+
+# ─── Claude local state ──────────────────────────────────
+.claude/

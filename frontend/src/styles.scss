@@ -1,0 +1,62 @@
+/* ─── Design Tokens ────────────────────────────────────────
+   ThemeService sets <html data-theme="dark|light">; CSS variables
+   below cascade everywhere. Components prefer var(--token, fallback)
+   so they keep rendering even before the service initialises. */
+
+:root,
+[data-theme="dark"] {
+  --bg-base:       #050510;
+  --bg-elev-1:     rgba(8, 14, 26, 0.78);
+  --bg-elev-2:     rgba(12, 22, 36, 0.92);
+  --fg-base:       #f0f4f8;
+  --fg-strong:     #ffffff;
+  --fg-muted:      #8a9aae;
+  --panel-bg:      rgba(8, 14, 26, 0.78);
+  --panel-border:  rgba(0, 212, 255, 0.14);
+  --panel-shadow:  0 8px 32px rgba(0, 0, 0, 0.45);
+  --accent-cyan:   #00d4ff;
+  --accent-amber:  #ffd54f;
+  --accent-danger: #ff5252;
+  --scrollbar-thumb:       rgba(0, 212, 255, 0.15);
+  --scrollbar-thumb-hover: rgba(0, 212, 255, 0.30);
+}
+
+[data-theme="light"] {
+  --bg-base:       #eaf1f8;
+  --bg-elev-1:     rgba(255, 255, 255, 0.86);
+  --bg-elev-2:     rgba(245, 249, 253, 0.94);
+  --fg-base:       #0c1428;
+  --fg-strong:     #04101f;
+  --fg-muted:      #4a5b70;
+  --panel-bg:      rgba(255, 255, 255, 0.86);
+  --panel-border:  rgba(0, 90, 140, 0.16);
+  --panel-shadow:  0 8px 24px rgba(20, 50, 80, 0.14);
+  --accent-cyan:   #0096c7;
+  --accent-amber:  #d68900;
+  --accent-danger: #d63333;
+  --scrollbar-thumb:       rgba(0, 150, 199, 0.30);
+  --scrollbar-thumb-hover: rgba(0, 150, 199, 0.55);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-base);
+  color: var(--fg-base);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  transition: background 0.28s ease, color 0.28s ease;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--scrollbar-thumb-hover); }
